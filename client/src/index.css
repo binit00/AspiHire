@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+/* ─── Design Tokens ─────────────────────────────────────────────────── */
+:root {
+  --font-sans: 'Inter', system-ui, 'Segoe UI', Roboto, sans-serif;
+
+  /* Brand */
+  --brand-50:  #f0f4ff;
+  --brand-100: #e0eaff;
+  --brand-200: #c7d7fe;
+  --brand-400: #818cf8;
+  --brand-500: #6366f1;
+  --brand-600: #4f46e5;
+  --brand-700: #4338ca;
+
+  /* Neutrals */
+  --gray-50:  #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+
+  /* Status column accent colours */
+  --col-wishlist:     #6366f1;
+  --col-applied:      #0ea5e9;
+  --col-phonescreen:  #f59e0b;
+  --col-interview:    #8b5cf6;
+  --col-offer:        #10b981;
+  --col-rejected:     #ef4444;
+
+  /* Surfaces */
+  --bg-app:     #f1f5f9;
+  --bg-card:    #ffffff;
+  --bg-column:  #f8fafc;
+  --border:     #e2e8f0;
+  --shadow-sm:  0 1px 3px 0 rgb(0 0 0 / .07), 0 1px 2px -1px rgb(0 0 0 / .07);
+  --shadow-md:  0 4px 6px -1px rgb(0 0 0 / .08), 0 2px 4px -2px rgb(0 0 0 / .08);
+  --shadow-lg:  0 10px 24px -3px rgb(0 0 0 / .1), 0 4px 8px -4px rgb(0 0 0 / .1);
+}
+
+/* ─── Reset & Base ──────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--gray-800);
+  background: var(--bg-app);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  /* Removed: width constraint, text-align center, border-inline */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  margin: 0;
+  color: var(--gray-900);
+}
+
+p { margin: 0; }
+
+/* ─── Kanban Board Scrollbar ─────────────────────────────────────────── */
+.kanban-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--gray-300) transparent;
+}
+.kanban-scroll::-webkit-scrollbar { height: 6px; }
+.kanban-scroll::-webkit-scrollbar-track { background: transparent; }
+.kanban-scroll::-webkit-scrollbar-thumb {
+  background: var(--gray-300);
+  border-radius: 99px;
+}
+
+/* ─── Column accent top-border helpers ───────────────────────────────── */
+.col-wishlist    { --col-accent: var(--col-wishlist); }
+.col-applied     { --col-accent: var(--col-applied); }
+.col-phonescreen { --col-accent: var(--col-phonescreen); }
+.col-interview   { --col-accent: var(--col-interview); }
+.col-offer       { --col-accent: var(--col-offer); }
+.col-rejected    { --col-accent: var(--col-rejected); }
+
+/* ─── Card drag animation ───────────────────────────────────────────── */
+.kanban-card {
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+.kanban-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+/* ─── Focus ring utility ─────────────────────────────────────────────── */
+.focus-ring:focus-visible {
+  outline: 2px solid var(--brand-500);
+  outline-offset: 2px;
+}
