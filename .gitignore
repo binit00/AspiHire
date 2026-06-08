@@ -1,0 +1,81 @@
+# Node modules
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Dependency directories
+client/node_modules/
+server/node_modules/
+
+# Build output
+client/dist/
+server/dist/
+
+# Vite cache
+client/.vite/
+client/node_modules/.vite/
+
+# TypeScript
+client/**/*.tsbuildinfo
+client/tsconfig.tsbuildinfo
+
+# Environment files
+*.env
+*.env.*
+client/.env
+server/.env
+
+# IDE and editor directories
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# npm package lock
+package-lock.json
+
+# Yarn
+yarn.lock
+
+# pnpm
+pnpm-lock.yaml
+
+# Logs and debug
+npm-debug.log*
+
+# Generated assets
+client/dist/
+
+# Test coverage
+coverage/
+
+# OS generated files
+ehthumbs.db
+Icon?
+
+# Optional npm cache
+.npm/
+
+# Build and output folders
+server/build/
+client/build/
+
+# Temporary files
+*.tmp
+*.temp
+
+# ignore README or docs? no
